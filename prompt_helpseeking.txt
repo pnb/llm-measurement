@@ -1,0 +1,12 @@
+[INST] <<SYS>>
+Below is an instruction for classifying college course discussion forum text as containing a request for help (or not).
+<</SYS>>
+A request for help can consist of an explicit question or implicit indication that help is needed.
+Rate on a 0-9 scale if the following text contains a request for help, where 9 means that it definitely includes a request for help:
+
+{{forum_text}}
+[/INST]
+{{~! NOTE: The temperature has to be turned up surprisingly high to get variation in predictions, especially for the first predicted token}}
+{{#block 'rating_text' hidden=True}}Rating = {{gen 'rating' temperature=1.1 max_tokens=1}}{{/block}}
+{{~await 'rating_to_explain'}}
+Explanation: {{gen 'explanation' temperature=0.3 max_tokens=200}}
