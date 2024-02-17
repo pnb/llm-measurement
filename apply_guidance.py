@@ -14,6 +14,7 @@ ap.add_argument('output_csv', help='Path to output CSV file')
 ap.add_argument('--iterations', type=int, default=9,
                 help='Number of rating rounds to do per text; must be odd (default 9)')
 ap.add_argument('--resume-from', help='Path to incomplete output file to resume from')
+ap.add_argument('--url', help='LLM API (default http://localhost:8000/v1)')
 args = ap.parse_args()
 assert args.iterations % 2 == 1, 'Number of rating rounds must be odd'
 
@@ -48,10 +49,10 @@ with open(args.prompt_file, 'r', encoding='utf8') as infile:
     prompt = infile.read()
 
 guidance.llm = guidance.llms.OpenAI(
-    "text-davinci-003",
+    'text-davinci-003',
     caching=False,
-    api_key="NA",  # Not checked by local server
-    api_base="http://localhost:8000/v1",
+    api_key='NA',  # Not checked by local server
+    api_base=args.url if args.url else 'http://localhost:8000/v1',
 )
 program = guidance(prompt)
 
