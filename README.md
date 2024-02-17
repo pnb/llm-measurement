@@ -27,7 +27,7 @@ python -m llama_cpp.server \
 Then, run the script to apply the LLM to your input using the *Guidance* library to enforce correct output format. Your input CSV file must have a column named "message" in it; all other columns, if present, will be ignored.
 
 ```bash
-python apply_guidance.py input.csv prompt_helpseeking.txt output.csv
+python apply_guidance.py input.csv prompt_helpseeking-llamachat.txt output.csv
 ```
 
 Or run `python apply_guidance.py -h` to see further usage instructions.
