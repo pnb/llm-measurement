@@ -35,3 +35,5 @@ Or run `python apply_guidance.py -h` to see further usage instructions.
 ## Citation
 
 Bosch, N., Reyes Denis, T., & Perry, M. (in press). Teacher learning online: Detecting patterns of engagement. *Proceedings of the 18th International Conference of the Learning Sciences - ICLS 2024*.
+
+[Paper PDF](https://pnigel.com/papers/bosch-inpress-VGBNAUH8.pdf)
